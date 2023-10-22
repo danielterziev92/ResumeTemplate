@@ -2,11 +2,14 @@
 
 
 /* Light Theme */
-:root,
-:root.light {
+:root {
     --background-primary: #e0e0e6;
     --background-secondary: #ffffff;
     --button-bg: #f46258;
+
+
+    --nav-width: 200px;
+    --aside-width: 100px;
 }
 
 /* Black Theme */
@@ -17,6 +20,13 @@
     --title-color: #ffffff;
     --description-color: #7a7a7a;
     --link-color: #ffc107;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
 }
 
 html {
@@ -32,6 +42,36 @@ body {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    display: grid;
+    grid-template-columns: var(--nav-width) auto var(--aside-width);
+}
+
+nav, aside {
+    background-color: red;
+}
+
+nav .info-header {
+    box-shadow: 0 3px 10px 0 rgb(0, 0, 0, 0.4);
+    padding: 10px;
+}
+
+nav .info-header figure {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .info-header figure img {
+    height: 100%;
+}
+
+nav .info-header figure h4 {
+
 }
 
 .fa-sun {
