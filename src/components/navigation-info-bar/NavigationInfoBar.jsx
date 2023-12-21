@@ -31,7 +31,11 @@ export default function NavigationInfoBar() {
 
     return (
         <aside className={style.InfoBarFrame}>
-
+            <figure>
+                <img src={state.imageUrl} alt="Profile picture"/>
+            </figure>
+            <h2>{state.fullName}</h2>
+            <p>{state.stackPosition}</p>
         </aside>
     );
 }
