@@ -1,5 +1,6 @@
 :root {
     --navigation-info-bar-backgroud: #ffffff;
+    --navigation-info-bar-details-bg: #f4f4f6;
     --navigation-info-bar-name-color: #1e1e28;
     --navigation-info-bar-position-color: #7a7a7a;
 }

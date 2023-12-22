@@ -1,15 +1,31 @@
+:root {
+    --info-bar-frame-header-height: 235px;
+    --info-bar-frame-footer-height: 50px;
+}
+
 .InfoBarFrame {
     width: 290px;
-    height: 235px;
+    height: 90vh;
     background-color: var(--navigation-info-bar-backgroud);
     box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.InfoBarFrame .InfoBarFrameHeader {
+    width: 100%;
+    height: var(--info-bar-frame-header-height);
     padding: 30px;
     display: grid;
     flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 0 -2px 7px 0 rgb(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-.InfoBarFrame figure {
+.InfoBarFrame .InfoBarFrameHeader figure {
     width: 100px;
     height: 100px;
     margin: auto auto 15px;
@@ -20,24 +36,36 @@
     align-items: center;
 }
 
-.InfoBarFrame figure img {
+.InfoBarFrame .InfoBarFrameHeader figure img {
     height: 100%;
 }
 
-.InfoBarFrame h2,
-.InfoBarFrame p {
+.InfoBarFrame .InfoBarFrameHeader h2,
+.InfoBarFrame .InfoBarFrameHeader p {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30px;
 }
 
-.InfoBarFrame h2 {
+.InfoBarFrame .InfoBarFrameHeader h2 {
     font-size: 1.3rem;
     color: var(--navigation-info-bar-name-color);
 }
 
-.InfoBarFrame p {
+.InfoBarFrame .InfoBarFrameHeader p {
     font-size: 0.8rem;
     color: var(--navigation-info-bar-position-color);
+}
+
+.InfoBarFrame .InfoBarFrameDetails {
+    width: 100%;
+    height: calc(90vh - var(--info-bar-frame-header-height) - var(--info-bar-frame-footer-height));
+    background-color: var(--navigation-info-bar-details-bg);
+}
+
+.InfoBarFrame .InfoBarFrameFooter {
+    width: 100%;
+    height: var(--info-bar-frame-footer-height);
+    box-shadow: 0 2px 7px 0 rgb(0, 0, 0, 0.5);
 }
