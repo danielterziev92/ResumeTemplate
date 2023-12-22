@@ -1,3 +1,9 @@
+:root {
+    --navigation-info-bar-backgroud: #ffffff;
+    --navigation-info-bar-name-color: #1e1e28;
+    --navigation-info-bar-position-color: #7a7a7a;
+}
+
 #root {
     width: 100vw;
     height: 100vh;

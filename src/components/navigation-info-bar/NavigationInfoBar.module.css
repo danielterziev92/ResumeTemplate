@@ -1,7 +1,9 @@
 .InfoBarFrame {
     width: 290px;
     height: 235px;
-    background-color: green;
+    background-color: var(--navigation-info-bar-backgroud);
+    box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
+    padding: 30px;
     display: grid;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,7 +12,7 @@
 .InfoBarFrame figure {
     width: 100px;
     height: 100px;
-    margin: auto;
+    margin: auto auto 15px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -24,5 +26,18 @@
 
 .InfoBarFrame h2,
 .InfoBarFrame p {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.InfoBarFrame h2 {
+    font-size: 1.3rem;
+    color: var(--navigation-info-bar-name-color);
+}
+
+.InfoBarFrame p {
+    font-size: 0.8rem;
+    color: var(--navigation-info-bar-position-color);
 }
