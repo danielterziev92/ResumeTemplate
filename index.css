@@ -2,14 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 
 :root {
+    --body-bg: #dedee4;
+
     --navigation-info-bar-backgroud: #ffffff;
     --navigation-info-bar-details-bg: #f4f4f6;
+    --navigation-info-bar-details-title-color: #f26157;
     --navigation-info-bar-name-color: #1e1e28;
     --navigation-info-bar-position-color: #7a7a7a;
-    --navigation-info-bar-details-h2-text-color: #000000;
 
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;
+
+
+    --light-gray: #d2d2d5;
+}
+
+body {
+    background-color: var(--body-bg);
 }
 
 #root {

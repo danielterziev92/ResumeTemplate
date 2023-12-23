@@ -71,15 +71,23 @@
     padding: 10px;
 }
 
+.InfoBarFrame .InfoBarFrameDetails .skills:not(:last-child)::after{
+    content: '';
+    display: block;
+    width: 80%;
+    border-bottom: 1px solid var(--light-gray);
+    margin: 35px auto auto;
+}
+
 .InfoBarFrame .InfoBarFrameDetails .skills h3 {
-    font-size: 1.3rem;
+    font-size: 1.5em;
     margin: 10px;
-    color: var(--navigation-info-bar-details-h2-text-color);
+    color: var(--navigation-info-bar-details-title-color);
 }
 
 .InfoBarFrame .InfoBarFrameDetails .skills li {
     list-style: none;
-    padding: 0 10px;
+    padding: 15px 10px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -117,10 +125,10 @@
     width: 100%;
 }
 
-.InfoBarFrame .InfoBarFrameFooter a .linkedIn {
+.InfoBarFrame .InfoBarFrameFooter a .LinkedIn {
     color: var(--linked-in-brand-color);
 }
 
-.InfoBarFrame .InfoBarFrameFooter a .gitHub {
+.InfoBarFrame .InfoBarFrameFooter a .GitHub {
     color: var(--git-hub-brand-color);
 }

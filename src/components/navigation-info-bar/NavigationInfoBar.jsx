@@ -2,17 +2,24 @@ import {useReducer} from "react";
 import {Link} from "react-router-dom";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithubSquare, faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {faGithubSquare, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 import style from './NavigationInfoBar.module.css'
-
 
 const initialState = {
     imageUrl: 'https://img.freepik.com/free-photo/portrait-happy-young-male-network-engineer-with-laptop-hand-working-datacenter_662251-1533.jpg?w=1380&t=st=1703161313~exp=1703161913~hmac=cd7906c7eada3324bcca3df999e12b2e3d74e433e49ca10aca00e312c1bffbc3',
     fullName: 'Daniel Terziev',
     stackPosition: 'Full Stack Python Developer',
-    gitHubUrl: 'https://github.com/danielterziev92/',
-    linkedIdUrl: 'https://www.linkedin.com/in/danielterziev/',
+    socialMedias: [
+        {
+            name: 'GitHub',
+            url: 'https://github.com/danielterziev92/',
+        },
+        {
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/danielterziev/',
+        },
+    ],
     allSkills: [
         {
             name: 'Technical skills',
@@ -71,6 +78,11 @@ const reducer = (state, action) => {
 export default function NavigationInfoBar() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
+    function getFontAwesomeIcon(name) {
+        if (name === 'GitHub') return <FontAwesomeIcon icon={faGithubSquare} className={style[name]}/>
+        if (name === 'LinkedIn') return <FontAwesomeIcon icon={faLinkedin} className={style[name]}/>
+    }
+
     return (
         <aside className={style.InfoBarFrame}>
             <div className={style.InfoBarFrameHeader}>
@@ -96,12 +108,11 @@ export default function NavigationInfoBar() {
                 ))}
             </div>
             <div className={style.InfoBarFrameFooter}>
-                <Link to={state.gitHubUrl}>
-                    <FontAwesomeIcon icon={faGithubSquare} className={style.gitHub}/>
-                </Link>
-                <Link to={state.linkedIdUrl}>
-                    <FontAwesomeIcon icon={faLinkedin} className={style.linkedIn}/>
-                </Link>
+                {state.socialMedias.map((media, index) => (
+                    <Link key={index} to={media.url}>
+                        {getFontAwesomeIcon(media.name)}
+                    </Link>
+                ))}
             </div>
         </aside>
     );
