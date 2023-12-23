@@ -13,6 +13,25 @@ const initialState = {
     stackPosition: 'Full Stack Python Developer',
     gitHubUrl: 'https://github.com/danielterziev92/',
     linkedIdUrl: 'https://www.linkedin.com/in/danielterziev/',
+    technicalSkills: {
+        programmingLanguages: {
+            name: 'Programming Languages',
+            skills: ['Python', 'JavaScript', 'HTML & CSS']
+        },
+        frameworks: {
+            name: 'Frameworks',
+            skills: ['Django', 'Django REST', 'ReactJS']
+        },
+        databases: {
+            name: 'Databases',
+            skills: ['PostgreSQL', 'SQLite', 'MS SQL', 'Redis']
+        },
+        tools: {
+            name: 'Tools',
+            skills: ['PyCharm', 'WebStorm', 'VSCode', 'Docker', 'Git', 'GitHub', 'Jira']
+        },
+    },
+    softSkills: ['Communication', 'Adaptability', 'Problem Solving', 'Creativity', 'Organizational skills', 'Teamwork', 'Attention to details'],
 }
 
 const reducerActions = {
@@ -47,13 +66,23 @@ export default function NavigationInfoBar() {
                 <p>{state.stackPosition}</p>
             </div>
             <div className={style.InfoBarFrameDetails}>
-
+                <div className={style.techSkills}>
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        {Object.keys(state.technicalSkills).map((key, index) => (
+                            <li key={index}>
+                                <span>{state.technicalSkills[key].name}</span>
+                                <p key={index}>{state.technicalSkills[key].skills.join(', ')}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
             <div className={style.InfoBarFrameFooter}>
-                <Link to={initialState.gitHubUrl}>
+                <Link to={state.gitHubUrl}>
                     <FontAwesomeIcon icon={faGithubSquare} className={style.gitHub}/>
                 </Link>
-                <Link to={initialState.linkedIdUrl}>
+                <Link to={state.linkedIdUrl}>
                     <FontAwesomeIcon icon={faLinkedin} className={style.linkedIn}/>
                 </Link>
             </div>

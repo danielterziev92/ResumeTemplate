@@ -49,6 +49,7 @@
 }
 
 .InfoBarFrame .InfoBarFrameHeader h2 {
+    font-family: 'Outfit', sans-serif;
     font-size: 1.3rem;
     color: var(--navigation-info-bar-name-color);
 }
@@ -62,6 +63,36 @@
     width: 100%;
     height: calc(90vh - var(--info-bar-frame-header-height) - var(--info-bar-frame-footer-height));
     background-color: var(--navigation-info-bar-details-bg);
+    overflow: scroll;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .techSkills {
+    padding: 10px;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .techSkills h3 {
+    font-size: 1.3rem;
+    margin: 10px;
+    color: var(--navigation-info-bar-details-h2-text-color);
+}
+
+.InfoBarFrame .InfoBarFrameDetails .techSkills li {
+    list-style: none;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .techSkills span {
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 5px;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .techSkills p {
+    margin-left: 15px;
+    font-size: 0.95rem;
 }
 
 .InfoBarFrame .InfoBarFrameFooter {

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+
 :root {
     --navigation-info-bar-backgroud: #ffffff;
     --navigation-info-bar-details-bg: #f4f4f6;
     --navigation-info-bar-name-color: #1e1e28;
     --navigation-info-bar-position-color: #7a7a7a;
-
+    --navigation-info-bar-details-h2-text-color: #000000;
 
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;
