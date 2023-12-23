@@ -67,30 +67,30 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-.InfoBarFrame .InfoBarFrameDetails .techSkills {
+.InfoBarFrame .InfoBarFrameDetails .skills {
     padding: 10px;
 }
 
-.InfoBarFrame .InfoBarFrameDetails .techSkills h3 {
+.InfoBarFrame .InfoBarFrameDetails .skills h3 {
     font-size: 1.3rem;
     margin: 10px;
     color: var(--navigation-info-bar-details-h2-text-color);
 }
 
-.InfoBarFrame .InfoBarFrameDetails .techSkills li {
+.InfoBarFrame .InfoBarFrameDetails .skills li {
     list-style: none;
     padding: 0 10px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.InfoBarFrame .InfoBarFrameDetails .techSkills span {
+.InfoBarFrame .InfoBarFrameDetails .skills span {
     font-weight: 700;
     font-size: 1.05rem;
     padding: 5px;
 }
 
-.InfoBarFrame .InfoBarFrameDetails .techSkills p {
+.InfoBarFrame .InfoBarFrameDetails .skills p {
     margin-left: 15px;
     font-size: 0.95rem;
 }

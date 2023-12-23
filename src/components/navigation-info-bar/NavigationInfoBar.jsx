@@ -13,25 +13,40 @@ const initialState = {
     stackPosition: 'Full Stack Python Developer',
     gitHubUrl: 'https://github.com/danielterziev92/',
     linkedIdUrl: 'https://www.linkedin.com/in/danielterziev/',
-    technicalSkills: {
-        programmingLanguages: {
-            name: 'Programming Languages',
-            skills: ['Python', 'JavaScript', 'HTML & CSS']
+    allSkills: [
+        {
+            name: 'Technical skills',
+            abilities: {
+                programmingLanguages: {
+                    name: 'Programming Languages',
+                    skills: ['Python', 'JavaScript', 'HTML & CSS']
+                },
+                frameworks: {
+                    name: 'Frameworks',
+                    skills: ['Django', 'Django REST', 'ReactJS']
+                },
+                databases: {
+                    name: 'Databases',
+                    skills: ['PostgreSQL', 'SQLite', 'MS SQL', 'Redis']
+                },
+                tools: {
+                    name: 'Tools',
+                    skills: ['PyCharm', 'WebStorm', 'VSCode', 'Docker', 'Git', 'GitHub', 'Jira']
+                },
+            }
         },
-        frameworks: {
-            name: 'Frameworks',
-            skills: ['Django', 'Django REST', 'ReactJS']
+        {
+            name: 'Soft Skills',
+            abilities: {
+                softSkills: {
+                    name: '',
+                    skills: ['Communication', 'Adaptability', 'Problem Solving', 'Creativity', 'Organizational skills', 'Teamwork', 'Attention to details'],
+                }
+            },
         },
-        databases: {
-            name: 'Databases',
-            skills: ['PostgreSQL', 'SQLite', 'MS SQL', 'Redis']
-        },
-        tools: {
-            name: 'Tools',
-            skills: ['PyCharm', 'WebStorm', 'VSCode', 'Docker', 'Git', 'GitHub', 'Jira']
-        },
-    },
-    softSkills: ['Communication', 'Adaptability', 'Problem Solving', 'Creativity', 'Organizational skills', 'Teamwork', 'Attention to details'],
+
+    ],
+
 }
 
 const reducerActions = {
@@ -66,17 +81,19 @@ export default function NavigationInfoBar() {
                 <p>{state.stackPosition}</p>
             </div>
             <div className={style.InfoBarFrameDetails}>
-                <div className={style.techSkills}>
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        {Object.keys(state.technicalSkills).map((key, index) => (
-                            <li key={index}>
-                                <span>{state.technicalSkills[key].name}</span>
-                                <p key={index}>{state.technicalSkills[key].skills.join(', ')}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {Object.values(state.allSkills).map(({name, abilities}, index) => (
+                    <div key={index} className={style.skills}>
+                        <h3>{name}</h3>
+                        <ul>
+                            {Object.values(abilities).map(({name, skills}, index) => (
+                                <li key={index}>
+                                    {name && <span>{name}</span>}
+                                    <p>{skills.join(', ')}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
             <div className={style.InfoBarFrameFooter}>
                 <Link to={state.gitHubUrl}>
