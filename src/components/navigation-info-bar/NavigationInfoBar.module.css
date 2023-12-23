@@ -43,19 +43,20 @@
 .InfoBarFrame .InfoBarFrameHeader h2,
 .InfoBarFrame .InfoBarFrameHeader p {
     display: flex;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bolder;
     justify-content: center;
     align-items: center;
     height: 30px;
 }
 
 .InfoBarFrame .InfoBarFrameHeader h2 {
-    font-family: 'Outfit', sans-serif;
     font-size: 1.3rem;
     color: var(--navigation-info-bar-name-color);
 }
 
 .InfoBarFrame .InfoBarFrameHeader p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--navigation-info-bar-position-color);
 }
 
@@ -71,12 +72,12 @@
     padding: 10px;
 }
 
-.InfoBarFrame .InfoBarFrameDetails .skills:not(:last-child)::after{
+.InfoBarFrame .InfoBarFrameDetails .skills:not(:last-child)::after {
     content: '';
     display: block;
     width: 80%;
     border-bottom: 1px solid var(--light-gray);
-    margin: 35px auto auto;
+    margin: 20px auto auto;
 }
 
 .InfoBarFrame .InfoBarFrameDetails .skills h3 {
@@ -101,6 +102,15 @@
 .InfoBarFrame .InfoBarFrameDetails .skills p {
     margin-left: 15px;
     font-size: 0.95rem;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .download {
+    padding: 20px;
+}
+
+.InfoBarFrame .InfoBarFrameDetails .download a {
+    color: var(--gray);
+    text-decoration: none;
 }
 
 .InfoBarFrame .InfoBarFrameFooter {

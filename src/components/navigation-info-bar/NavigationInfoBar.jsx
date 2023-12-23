@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithubSquare, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faDownload} from '@fortawesome/free-solid-svg-icons'
 
 import style from './NavigationInfoBar.module.css'
 
@@ -51,9 +52,8 @@ const initialState = {
                 }
             },
         },
-
     ],
-
+    cvLink: '../../../public/Resume.pdf',
 }
 
 const reducerActions = {
@@ -83,6 +83,7 @@ export default function NavigationInfoBar() {
         if (name === 'LinkedIn') return <FontAwesomeIcon icon={faLinkedin} className={style[name]}/>
     }
 
+
     return (
         <aside className={style.InfoBarFrame}>
             <div className={style.InfoBarFrameHeader}>
@@ -106,6 +107,9 @@ export default function NavigationInfoBar() {
                         </ul>
                     </div>
                 ))}
+                <p className={style.download}>
+                    <Link to={state.cvLink} target="_blank" download>Download CV <FontAwesomeIcon icon={faDownload}/>
+                    </Link></p>
             </div>
             <div className={style.InfoBarFrameFooter}>
                 {state.socialMedias.map((media, index) => (
