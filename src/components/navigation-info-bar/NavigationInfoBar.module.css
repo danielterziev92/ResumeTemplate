@@ -68,4 +68,28 @@
     width: 100%;
     height: var(--info-bar-frame-footer-height);
     box-shadow: 0 2px 7px 0 rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InfoBarFrame .InfoBarFrameFooter a {
+    padding: 5px;
+}
+
+.InfoBarFrame .InfoBarFrameFooter a svg {
+    width: 25px;
+    height: 25px;
+}
+
+.InfoBarFrame .InfoBarFrameFooter a svg path {
+    width: 100%;
+}
+
+.InfoBarFrame .InfoBarFrameFooter a .linkedIn {
+    color: var(--linked-in-brand-color);
+}
+
+.InfoBarFrame .InfoBarFrameFooter a .gitHub {
+    color: var(--git-hub-brand-color);
 }

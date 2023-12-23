@@ -1,8 +1,11 @@
 import {useReducer} from "react";
+import {Link} from "react-router-dom";
+
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithubSquare, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 import style from './NavigationInfoBar.module.css'
 
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const initialState = {
     imageUrl: 'https://img.freepik.com/free-photo/portrait-happy-young-male-network-engineer-with-laptop-hand-working-datacenter_662251-1533.jpg?w=1380&t=st=1703161313~exp=1703161913~hmac=cd7906c7eada3324bcca3df999e12b2e3d74e433e49ca10aca00e312c1bffbc3',
@@ -47,8 +50,12 @@ export default function NavigationInfoBar() {
 
             </div>
             <div className={style.InfoBarFrameFooter}>
-                <FontAwesomeIcon icon="fa-brands fa-square-github"/>
-                <FontAwesomeIcon icon="fa-brands fa-linkedin"/>
+                <Link to={initialState.gitHubUrl}>
+                    <FontAwesomeIcon icon={faGithubSquare} className={style.gitHub}/>
+                </Link>
+                <Link to={initialState.linkedIdUrl}>
+                    <FontAwesomeIcon icon={faLinkedin} className={style.linkedIn}/>
+                </Link>
             </div>
         </aside>
     );

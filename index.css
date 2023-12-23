@@ -3,6 +3,10 @@
     --navigation-info-bar-details-bg: #f4f4f6;
     --navigation-info-bar-name-color: #1e1e28;
     --navigation-info-bar-position-color: #7a7a7a;
+
+
+    --linked-in-brand-color: #0e76a8;
+    --git-hub-brand-color: #171515;
 }
 
 #root {
