@@ -72,6 +72,10 @@
     padding: 10px;
 }
 
+.InfoBarFrame .InfoBarFrameDetails .skills svg {
+    margin-right: 15px;
+}
+
 .InfoBarFrame .InfoBarFrameDetails .skills:not(:last-child)::after {
     content: '';
     display: block;

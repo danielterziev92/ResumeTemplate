@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithubSquare, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import {faDownload} from '@fortawesome/free-solid-svg-icons'
-
+import * as SolidIcons from '@fortawesome/free-solid-svg-icons'
 import style from './NavigationInfoBar.module.css'
 
 const initialState = {
@@ -24,6 +23,7 @@ const initialState = {
     allSkills: [
         {
             name: 'Technical skills',
+            iconName: 'faGears',
             abilities: {
                 programmingLanguages: {
                     name: 'Programming Languages',
@@ -45,6 +45,7 @@ const initialState = {
         },
         {
             name: 'Soft Skills',
+            iconName: 'faUserLarge',
             abilities: {
                 softSkills: {
                     name: '',
@@ -78,11 +79,16 @@ const reducer = (state, action) => {
 export default function NavigationInfoBar() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    function getFontAwesomeIcon(name) {
-        if (name === 'GitHub') return <FontAwesomeIcon icon={faGithubSquare} className={style[name]}/>
-        if (name === 'LinkedIn') return <FontAwesomeIcon icon={faLinkedin} className={style[name]}/>
+    function getFontAwesomeIcon(iconName) {
+        switch (iconName) {
+            case 'GitHub':
+                return <FontAwesomeIcon icon={faGithubSquare} className={style[iconName]}/>
+            case 'LinkedIn':
+                return <FontAwesomeIcon icon={faLinkedin} className={style[iconName]}/>
+            default:
+                return <FontAwesomeIcon icon={SolidIcons[iconName]} className={style[iconName]}/>
+        }
     }
-
 
     return (
         <aside className={style.InfoBarFrame}>
@@ -94,9 +100,12 @@ export default function NavigationInfoBar() {
                 <p>{state.stackPosition}</p>
             </div>
             <div className={style.InfoBarFrameDetails}>
-                {Object.values(state.allSkills).map(({name, abilities}, index) => (
+                {Object.values(state.allSkills).map(({name, iconName, abilities}, index) => (
                     <div key={index} className={style.skills}>
-                        <h3>{name}</h3>
+                        <h3>
+                            {getFontAwesomeIcon(iconName)}
+                            {name}
+                        </h3>
                         <ul>
                             {Object.values(abilities).map(({name, skills}, index) => (
                                 <li key={index}>
@@ -108,7 +117,7 @@ export default function NavigationInfoBar() {
                     </div>
                 ))}
                 <p className={style.download}>
-                    <Link to={state.cvLink} target="_blank" download>Download CV <FontAwesomeIcon icon={faDownload}/>
+                    <Link to={state.cvLink} target="_blank" download>Download CV {getFontAwesomeIcon('faDownload')}
                     </Link></p>
             </div>
             <div className={style.InfoBarFrameFooter}>
