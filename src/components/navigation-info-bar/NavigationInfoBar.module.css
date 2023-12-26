@@ -4,6 +4,7 @@
 }
 
 .InfoBarFrame {
+    grid-area: nav-bar;
     width: 290px;
     height: 90vh;
     background-color: var(--navigation-info-bar-backgroud);
