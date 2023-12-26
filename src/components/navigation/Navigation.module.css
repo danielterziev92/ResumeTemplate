@@ -1,5 +1,7 @@
 .navMenu {
     width: 80px;
+    height: 100%;
+    overflow: hidden;
     background-color: var(--navigation-menu-bg);
     grid-area: navigation;
 }

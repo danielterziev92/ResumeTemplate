@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import style from './Navigation.module.css';
 import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
 
-const navigationTabs = [
+const initialState = [
     {
         title: 'Home',
         iconName: 'faHouse'
@@ -22,6 +22,7 @@ const navigationTabs = [
 
 export default function Navigation() {
     const [activeTabRef, setActiveTabRef] = useState('Home');
+    const [navigationTabs, setNavigationTabs] = useState(initialState);
 
     function changeActiveTabClickHandler(e) {
         setActiveTabRef(e.target.textContent);
@@ -39,9 +40,6 @@ export default function Navigation() {
                         {title}
                     </li>
                 ))}
-                {/*<li className={active style.active} onClick={changeActiveTabClickHandler}>Home</li>*/}
-                {/*<li onClick={changeActiveTabClickHandler}>Contacts</li>*/}
-                {/*<li onClick={changeActiveTabClickHandler}>Block</li>*/}
             </ul>
         </nav>
     );
