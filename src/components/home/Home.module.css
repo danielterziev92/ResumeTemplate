@@ -4,7 +4,5 @@
     background-color: var(--main-content-wrapper-bg);
     box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
     padding: 10px 0;
-    display: flex;
-    justify-content: center;
 }
 

@@ -1,7 +1,7 @@
 .banner {
     width: 95%;
     height: 350px;
-    margin-top: 10px;
+    margin: 10px auto 10px auto;
     padding: 40px;
     background-image: url("../../../public/home_bg.png");
     background-size: auto 100%;

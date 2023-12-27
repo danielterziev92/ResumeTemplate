@@ -1,0 +1,48 @@
+.educationContainer {
+    padding: 40px;
+}
+
+.educationContainer > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 0;
+}
+
+.educationBox {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.educationBox h3 {
+    font-size: 1.2rem;
+}
+
+.educationBox small {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+
+.educationBox p {
+    font-size: 0.9rem;
+}
+
+.educationBox div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: #f26157;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.educationBox div svg {
+    transition: transform 0.5s ease-in-out;
+}
+
+.educationBox div:hover svg {
+    transform: translateX(10px);
+}
