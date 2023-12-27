@@ -12,8 +12,12 @@
 
 
     --navigation-menu-bg: #f4f4f6;
-    --navigation-menu-bg-active: #f26157;
-    --navigation-menu-color-text: #ffffff;
+    --navigation-menu-text: #171515;
+    --navigation-menu-text-hover: #f26157;
+    --navigation-menu-active-bg: #f26157;
+    --navigation-menu-active-color-text: #ffffff;
+
+    --main-content-wrapper-bg: #eeeef4;
 
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;

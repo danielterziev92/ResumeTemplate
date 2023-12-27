@@ -1,7 +1,6 @@
 .MainContainer {
     width: 90vw;
     height: 90vh;
-    background-color: red;
     display: grid;
     grid-template-columns: 290px auto 80px;
     grid-template-areas: "nav-bar cont-wrapper navigation";

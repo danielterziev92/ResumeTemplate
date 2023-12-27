@@ -4,19 +4,24 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import style from './Navigation.module.css';
 import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
+import Paths from "../../utils/Paths.js";
+import {Link} from "react-router-dom";
 
 const initialState = [
     {
         title: 'Home',
-        iconName: 'faHouse'
+        iconName: 'faHouse',
+        path: '/'
     },
     {
         title: 'Contacts',
-        iconName: 'faAddressCard'
+        iconName: 'faAddressCard',
+        path: '/contacts'
     },
     {
         title: 'Blog',
-        iconName: 'faBlog'
+        iconName: 'faBlog',
+        path: '/blog'
     },
 ]
 
@@ -31,14 +36,15 @@ export default function Navigation() {
     return (
         <nav className={style.navMenu}>
             <ul>
-                {navigationTabs.map(({title, iconName}, index) => (
-                    <li key={index}
-                        onClick={changeActiveTabClickHandler}
-                        className={activeTabRef === title ? style.active : ''}
-                    >
-                        <FontAwesomeIcon icon={SolidIcons[iconName]}/>
-                        {title}
-                    </li>
+                {navigationTabs.map(({title, iconName, path}, index) => (
+                    <Link to={path} key={index}>
+                        <li onClick={changeActiveTabClickHandler}
+                            className={activeTabRef === title ? style.active : ''}
+                        >
+                            <FontAwesomeIcon icon={SolidIcons[iconName]}/>
+                            {title}
+                        </li>
+                    </Link>
                 ))}
             </ul>
         </nav>
