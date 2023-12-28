@@ -2,33 +2,32 @@
     padding: 40px;
 }
 
-.educationContainer > div {
+.educationContainer .educationBox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 40px 0;
 }
 
-.educationBox {
+.educationBox section {
     background-color: white;
     padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
 }
 
-.educationBox h3 {
+.educationBox section h3 {
     font-size: 1.2rem;
 }
 
-.educationBox small {
+.educationBox section small {
     font-size: 0.7rem;
     margin-bottom: 10px;
 }
 
-.educationBox p {
+.educationBox section p {
     font-size: 0.9rem;
 }
 
-.educationBox div {
+.educationBox section div {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -39,10 +38,10 @@
     cursor: pointer;
 }
 
-.educationBox div svg {
+.educationBox section div svg {
     transition: transform 0.5s ease-in-out;
 }
 
-.educationBox div:hover svg {
+.educationBox section div:hover svg {
     transform: translateX(10px);
 }
