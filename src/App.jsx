@@ -6,6 +6,7 @@ import Navigation from "./components/navigation/Navigation.jsx";
 import Home from "./components/home/Home.jsx";
 
 import Paths from "./utils/Paths.js";
+import Contacts from "./components/contacts/Contacts.jsx";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <NavigationInfoBar/>
             <Routes>
                 <Route path={Paths.home} element={<Home/>}/>
+                <Route path={Paths.contacts} element={<Contacts/>}/>
             </Routes>
             <Navigation/>
         </div>
