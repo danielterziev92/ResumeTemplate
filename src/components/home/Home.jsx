@@ -7,9 +7,9 @@ export default function Home() {
 
 
     return (
-        <div className={style.home}>
+        <main className={style.home}>
             <Banner/>
             <Education/>
-        </div>
+        </main>
     );
 }

@@ -6,7 +6,7 @@ import style from './ImageModal.module.css';
 export default function ImageModal({imagePath, closeHandler}) {
     return (
         <div className={style.modal}>
-            <FontAwesomeIcon icon={faXmark} className={style.closeButton} onClick={closeHandler}/>
+            <FontAwesomeIcon icon={faXmark} className={style.closeButton} />
             <figure>
                 <img src={imagePath} alt="Image"/>
             </figure>

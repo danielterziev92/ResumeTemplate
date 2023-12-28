@@ -6,16 +6,18 @@
 .InfoBarFrame {
     grid-area: nav-bar;
     width: 290px;
-    height: 90vh;
+    height: inherit;
     background-color: var(--navigation-info-bar-backgroud);
     box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    position: relative;
     overflow: hidden;
+    z-index: 2;
 }
 
 .InfoBarFrame .InfoBarFrameHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: var(--info-bar-frame-header-height);
     padding: 30px;
@@ -62,8 +64,10 @@
 }
 
 .InfoBarFrame .InfoBarFrameDetails {
+    position: absolute;
+    top: var(--info-bar-frame-header-height);
     width: 100%;
-    height: calc(90vh - var(--info-bar-frame-header-height) - var(--info-bar-frame-footer-height));
+    height: calc(100% - var(--info-bar-frame-header-height) - var(--info-bar-frame-footer-height));
     background-color: var(--navigation-info-bar-details-bg);
     overflow: scroll;
     font-family: 'Ubuntu', sans-serif;
@@ -119,6 +123,9 @@
 }
 
 .InfoBarFrame .InfoBarFrameFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: var(--info-bar-frame-footer-height);
     box-shadow: 0 2px 7px 0 rgb(0, 0, 0, 0.5);

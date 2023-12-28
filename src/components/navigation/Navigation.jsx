@@ -31,17 +31,17 @@ const pathValueMap = initialState.reduce((acc, item) => {
 
 export default function Navigation() {
     const location = useLocation();
-    const [activeTabRef, setActiveTabRef] = useState('Home');
+    const [activeTab, setActiveTab] = useState('Home');
     const [navigationTabs, setNavigationTabs] = useState(initialState);
 
     useLayoutEffect(() => {
         if (location.pathname === '/') return;
 
-        setActiveTabRef(pathValueMap[location.pathname])
+        setActiveTab(pathValueMap[location.pathname])
     }, []);
 
     function changeActiveTabClickHandler(e) {
-        setActiveTabRef(e.target.textContent);
+        setActiveTab(e.target.textContent);
     }
 
     return (
@@ -50,7 +50,7 @@ export default function Navigation() {
                 {navigationTabs.map(({title, iconName, path}, index) => (
                     <Link to={path} key={index}>
                         <li onClick={changeActiveTabClickHandler}
-                            className={activeTabRef === title ? style.active : ''}
+                            className={activeTab === title ? style.active : ''}
                         >
                             <FontAwesomeIcon icon={SolidIcons[iconName]}/>
                             {title}
