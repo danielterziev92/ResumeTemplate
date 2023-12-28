@@ -1,15 +1,10 @@
-.contactContainer {
-    width: 100%;
-    height: 100%;
-    background-color: var(--main-content-wrapper-bg);
-    padding: 20px 0;
-}
-
 .contactInformation {
     width: 90%;
     margin: auto;
 }
 
 .contactBox {
-
+    margin: 20px 0;
+    background-color: white;
+    padding: 20px;
 }
