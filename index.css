@@ -2,28 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 
 :root {
+    --main-color: #f46258;
+    --gray: #7a7a7a;
+    --light-gray: #d2d2d5;
+
+
     --body-bg: #dedee4;
 
     --navigation-info-bar-backgroud: #ffffff;
     --navigation-info-bar-details-bg: #f4f4f6;
-    --navigation-info-bar-details-title-color: #f26157;
+    --navigation-info-bar-details-title-color: var(--main-color);
     --navigation-info-bar-name-color: #1e1e28;
     --navigation-info-bar-position-color: #7a7a7a;
 
-
     --navigation-menu-bg: #f4f4f6;
     --navigation-menu-text: #171515;
-    --navigation-menu-text-hover: #f26157;
-    --navigation-menu-active-bg: #f26157;
-    --navigation-menu-active-color-text: #ffffff;
+    --navigation-menu-text-hover: var(--main-color);
+    --navigation-menu-active-bg: var(--main-color);
+    --navigation-menu-active-color-text: var(--main-color);
 
     --main-content-wrapper-bg: #eeeef4;
 
+    --contact-box-bg: #ffffff;
+    --contact-box-a-tag-color: var(--main-color);
+    --contact-form-bg: #ffffff;
+    --contact-form-label-bg: #f4f4f6;
+
+    --footer-bg: #ffffff;
+
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;
-
-    --gray: #7a7a7a;
-    --light-gray: #d2d2d5;
 }
 
 body {

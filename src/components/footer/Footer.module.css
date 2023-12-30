@@ -6,7 +6,7 @@
 }
 
 .footerContent {
-    background-color: white;
+    background-color: var(--footer-bg);
     width: 90%;
     padding: 10px;
     display: flex;
