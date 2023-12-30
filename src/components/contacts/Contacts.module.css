@@ -1,37 +1,62 @@
 .contactContainer {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
+}
+
+.contactContainer h3 {
+    margin-top: 50px
 }
 
 .contactContainer form {
     padding: 30px;
-    margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--contact-form-bg);
+    margin: 20px 0 50px;
 }
 
 .contactContainer form label {
     width: 100%;
     display: flex;
     align-items: center;
-    box-shadow: inset 0 1px 4px 0 rgba(15,15,20,.1);
+    box-shadow: inset 0 1px 4px 0 rgba(15, 15, 20, .1);
     background-color: var(--contact-form-label-bg);
 }
 
-.contactContainer form label .icon {
+.contactContainer form label span {
+    height: 100%;
+}
+
+.contactContainer form label svg {
     padding: 20px;
 }
 
-.contactContainer form label input {
+.contactContainer form label input,
+.contactContainer form label textarea {
+    padding: 20px;
     width: 100%;
     border: none;
     background-color: unset;
 }
 
-.contactContainer form label input:focus + .contactContainer form label svg{
-    background-color: #f26157;
+.contactContainer form label input:focus,
+.contactContainer form label textarea:focus {
+    outline: none;
+}
+
+.contactContainer form label .focusedIcon {
+    background-color: var(--contact-form-focused-icon-bg);
+}
+
+.contactContainer form button {
+    border: none;
+    padding: 15px;
+    margin-left: auto;
+    font-size: 1rem;
+    text-transform: capitalize;
+    background-color: var(--contact-form-button-bg);
+    cursor: pointer;
 }
 
 .contactBox {

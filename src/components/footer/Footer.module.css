@@ -7,7 +7,7 @@
 
 .footerContent {
     background-color: var(--footer-bg);
-    width: 90%;
+    width: 95%;
     padding: 10px;
     display: flex;
     justify-content: space-between;

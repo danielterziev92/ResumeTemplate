@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faEnvelope, faPenToSquare} from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,7 @@ import style from './Contacts.module.css';
 import Footer from "../footer/Footer.jsx";
 
 import useForm from "../../hooks/useForm.js";
-import {Form} from "react-router-dom";
+
 import createInitialValuesObject from "../../hooks/createInitialValuesObject.js";
 
 const initialState = {
@@ -39,9 +39,13 @@ export default function Contacts() {
     );
     const [focusedInput, setFocusedInput] = useState('');
 
-    function changeFocusedInput(e) {
-        console.log(e.target)
-    }
+    useEffect(() => {
+        console.log('focusedInput', focusedInput)
+    }, [focusedInput]);
+
+    const changeFocusedInput = (e) => setFocusedInput(e.target.name);
+
+    const clearFocusedInput = () => setFocusedInput('');
 
     function submitFormClickHandler(values) {
         console.log(values);
@@ -71,21 +75,30 @@ export default function Contacts() {
                 <h3>Get in touch</h3>
                 <form onSubmit={submitFormHandler}>
                     <label htmlFor={FormKey.name}>
-                        <FontAwesomeIcon icon={faUser} className={style.icon}/>
+                        <span className={focusedInput === FormKey.name ? style.focusedIcon : ''}>
+                            <FontAwesomeIcon icon={faUser}/>
+                        </span>
                         <input type="text" name={FormKey.name} value={formValues[FormKey.name]} id={FormKey.name}
-                               placeholder="Name" onChange={valueChangeHandler} onFocus={changeFocusedInput}/>
+                               placeholder="Name"
+                               onChange={valueChangeHandler} onFocus={changeFocusedInput} onBlur={clearFocusedInput}/>
                     </label>
                     <label htmlFor={FormKey.email}>
-                        <FontAwesomeIcon icon={faEnvelope} className={style.icon}/>
+                        <span className={focusedInput === FormKey.email ? style.focusedIcon : ''}>
+                            <FontAwesomeIcon icon={faEnvelope}/>
+                        </span>
                         <input type="email" name={FormKey.email} value={formValues[FormKey.email]} id={FormKey.email}
-                               placeholder="Email" onChange={valueChangeHandler} onFocus={changeFocusedInput}/>
+                               placeholder="Email"
+                               onChange={valueChangeHandler} onFocus={changeFocusedInput} onBlur={clearFocusedInput}/>
                     </label>
                     <label htmlFor={FormKey.message}>
-                        <FontAwesomeIcon icon={faPenToSquare} className={style.icon}/>
+                        <span className={focusedInput === FormKey.message ? style.focusedIcon : ''}>
+                            <FontAwesomeIcon icon={faPenToSquare}/>
+                        </span>
                         <textarea name={FormKey.message} id={FormKey.message} placeholder="Message"
                                   value={formValues[FormKey.message]} cols="auto" rows="10"
                                   onChange={valueChangeHandler}
                                   onFocus={changeFocusedInput}
+                                  onBlur={clearFocusedInput}
                         />
                     </label>
                     <button>Send message</button>

@@ -3,13 +3,14 @@
 
 :root {
     --main-color: #f46258;
+    --white: #ffffff;
     --gray: #7a7a7a;
     --light-gray: #d2d2d5;
 
 
     --body-bg: #dedee4;
 
-    --navigation-info-bar-backgroud: #ffffff;
+    --navigation-info-bar-backgroud: var(--white);
     --navigation-info-bar-details-bg: #f4f4f6;
     --navigation-info-bar-details-title-color: var(--main-color);
     --navigation-info-bar-name-color: #1e1e28;
@@ -19,16 +20,18 @@
     --navigation-menu-text: #171515;
     --navigation-menu-text-hover: var(--main-color);
     --navigation-menu-active-bg: var(--main-color);
-    --navigation-menu-active-color-text: var(--main-color);
+    --navigation-menu-active-color-text: var(--white);
 
     --main-content-wrapper-bg: #eeeef4;
 
-    --contact-box-bg: #ffffff;
+    --contact-box-bg: var(--white);
     --contact-box-a-tag-color: var(--main-color);
-    --contact-form-bg: #ffffff;
+    --contact-form-bg: var(--white);
     --contact-form-label-bg: #f4f4f6;
+    --contact-form-focused-icon-bg: var(--main-color);
+    --contact-form-button-bg: var(--main-color);
 
-    --footer-bg: #ffffff;
+    --footer-bg: var(--white);
 
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;
