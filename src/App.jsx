@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 
 import style from './App.module.css'
 
@@ -8,8 +8,16 @@ import Navigation from "./components/navigation/Navigation.jsx";
 import Contacts from "./components/contacts/Contacts.jsx";
 
 import Paths from "./utils/Paths.js";
+import {useEffect} from "react";
 
 function App() {
+    const location = useLocation();
+
+    useEffect(() => {
+        const mainElement = document.querySelector('main');
+        mainElement.scrollTop = 0;
+    }, [location.pathname]);
+
     return (
         <div className={style.MainContainer}>
             <NavigationInfoBar/>
