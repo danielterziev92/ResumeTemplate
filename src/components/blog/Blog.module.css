@@ -1,0 +1,21 @@
+.blogContainer {
+    width: var(--cointainer-width);
+    margin: 30px auto;
+    background-color: red;
+}
+
+.postContent {
+    background-color: yellow;
+}
+
+.postContent .dateAndStacks {
+    background-color: green;
+}
+
+.postContent .postDate {
+
+}
+
+.postContent .postStacks {
+
+}

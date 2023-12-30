@@ -1,6 +1,6 @@
 .contactContainer {
-    width: 95%;
-    margin: 0 auto;
+    width: var(--cointainer-width);
+    margin: 50px auto;
 }
 
 .contactContainer h3 {

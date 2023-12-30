@@ -9,6 +9,7 @@ import Contacts from "./components/contacts/Contacts.jsx";
 
 import Paths from "./utils/Paths.js";
 import {useEffect} from "react";
+import Blog from "./components/blog/Blog.jsx";
 
 function App() {
     const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
                 <Routes>
                     <Route path={Paths.home} element={<Home/>}/>
                     <Route path={Paths.contacts} element={<Contacts/>}/>
+                    <Route path={Paths.blog} element={<Blog/>}/>
                 </Routes>
             </main>
             <Navigation/>

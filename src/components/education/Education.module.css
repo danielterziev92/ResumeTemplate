@@ -1,5 +1,6 @@
 .educationContainer {
-    padding: 40px;
+    width: var(--cointainer-width);
+    margin: 50px auto;
 }
 
 .educationContainer .educationBox {

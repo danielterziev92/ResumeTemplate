@@ -7,7 +7,6 @@
     --gray: #7a7a7a;
     --light-gray: #d2d2d5;
 
-
     --body-bg: #dedee4;
 
     --navigation-info-bar-backgroud: var(--white);
@@ -35,6 +34,8 @@
 
     --linked-in-brand-color: #0e76a8;
     --git-hub-brand-color: #171515;
+
+    --cointainer-width: 95%;
 }
 
 body {
