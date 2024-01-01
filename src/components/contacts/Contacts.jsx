@@ -54,7 +54,7 @@ export default function Contacts() {
     return (
         <>
             <article className={style.contactContainer}>
-                <h3>Contact information</h3>
+                <h2>Contact information</h2>
                 <section className={style.contactBox}>
                     {Object.keys(contactInfo).map((key, index) => (
                         <p key={index}>
@@ -72,7 +72,7 @@ export default function Contacts() {
                 </section>
             </article>
             <article className={style.contactContainer}>
-                <h3>Get in touch</h3>
+                <h2>Get in touch</h2>
                 <form onSubmit={submitFormHandler}>
                     <label htmlFor={FormKey.name}>
                         <span className={focusedInput === FormKey.name ? style.focusedIcon : ''}>

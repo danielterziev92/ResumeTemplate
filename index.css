@@ -30,6 +30,10 @@
     --contact-form-focused-icon-bg: var(--main-color);
     --contact-form-button-bg: var(--main-color);
 
+    --blog-post-date-and-stacks-color: #5c5c6f;
+    --blog-post-date-and-stacks-bg: #f4f4f6;
+    --blog-post-a-tag-color: var(--white);
+
     --footer-bg: var(--white);
 
     --linked-in-brand-color: #0e76a8;

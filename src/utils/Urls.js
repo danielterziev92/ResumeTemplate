@@ -1,4 +1,4 @@
-const BASE_URL = '//localhost'
+const BASE_URL = 'http://localhost:5173'
 
 const Urls = {
     index: `${BASE_URL}/`,
@@ -6,3 +6,5 @@ const Urls = {
     blog: `${BASE_URL}/blog/`,
     blogDetail: `${BASE_URL}/blog/:id/`,
 }
+
+export default Urls;
