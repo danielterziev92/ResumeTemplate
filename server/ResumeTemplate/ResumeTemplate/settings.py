@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+import cloudinary
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', )
@@ -94,3 +96,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user_app.UserApp'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+cloudinary.config(
+    cloud_name=CLOUDINARY_STORAGE.get('CLOUD_NAME'),
+    api_key=CLOUDINARY_STORAGE.get('API_KEY'),
+    api_secret=CLOUDINARY_STORAGE.get('API_SECRET'),
+)
