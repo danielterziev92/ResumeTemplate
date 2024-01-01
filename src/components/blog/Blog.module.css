@@ -8,19 +8,19 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    align-items: start;
 }
 
 .postContent {
-    /*height: 100%;*/
     background-color: white;
 }
 
 .postContent figure {
     --post-figure-width: 100%;
-    --post-figure-height: 65%;
+    /*--post-figure-height: 56.25%;*/
 
     width: var(--post-figure-width);
-    height: calc((9 / 16) * var(--post-figure-height));
+    /*height: var(--post-figure-height);*/
     overflow: hidden;
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useLayoutEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import pathToUrl from "../../utils/pathToUrl.js";
 
 const initialPostsState = [
     {
-        id: 1,
+        id: 0,
         imageUrl: 'https://files.realpython.com/media/Monthly-Python-News_Purple_Watermarked.5b2e306328cb.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -22,7 +22,7 @@ const initialPostsState = [
         techStacks: ['Python'],
     },
     {
-        id: 2,
+        id: 1,
         imageUrl: 'https://media.istockphoto.com/id/1403644222/photo/illustration-demonstrates-the-routing-of-ip-packets-throughout-the-internet-a-lan-computer.webp?b=1&s=170667a&w=0&k=20&c=oSHjHPl2eM2AMR8yam_7f_yHh5WHrrd1he1A4bGSuPs=',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -30,7 +30,7 @@ const initialPostsState = [
         techStacks: ['Python', 'JavaScript', 'React'],
     },
     {
-        id: 3,
+        id: 2,
         imageUrl: 'https://w0.peakpx.com/wallpaper/659/699/HD-wallpaper-python-amoled-coding-coding-dark-dark-programming-python-sky-universe.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -38,7 +38,7 @@ const initialPostsState = [
         techStacks: ['Python', 'JavaScript', 'React'],
     },
     {
-        id: 4,
+        id: 3,
         imageUrl: 'https://files.realpython.com/media/Monthly-Python-News_Purple_Watermarked.5b2e306328cb.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -46,7 +46,7 @@ const initialPostsState = [
         techStacks: ['Python'],
     },
     {
-        id: 5,
+        id: 4,
         imageUrl: 'https://media.istockphoto.com/id/1403644222/photo/illustration-demonstrates-the-routing-of-ip-packets-throughout-the-internet-a-lan-computer.webp?b=1&s=170667a&w=0&k=20&c=oSHjHPl2eM2AMR8yam_7f_yHh5WHrrd1he1A4bGSuPs=',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -54,7 +54,7 @@ const initialPostsState = [
         techStacks: ['Python', 'JavaScript', 'React'],
     },
     {
-        id: 6,
+        id: 5,
         imageUrl: 'https://w0.peakpx.com/wallpaper/659/699/HD-wallpaper-python-amoled-coding-coding-dark-dark-programming-python-sky-universe.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -62,7 +62,7 @@ const initialPostsState = [
         techStacks: ['Python', 'JavaScript', 'React'],
     },
     {
-        id: 7,
+        id: 6,
         imageUrl: 'https://files.realpython.com/media/Monthly-Python-News_Purple_Watermarked.5b2e306328cb.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -70,7 +70,7 @@ const initialPostsState = [
         techStacks: ['Python'],
     },
     {
-        id: 8,
+        id: 7,
         imageUrl: 'https://media.istockphoto.com/id/1403644222/photo/illustration-demonstrates-the-routing-of-ip-packets-throughout-the-internet-a-lan-computer.webp?b=1&s=170667a&w=0&k=20&c=oSHjHPl2eM2AMR8yam_7f_yHh5WHrrd1he1A4bGSuPs=',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -78,7 +78,7 @@ const initialPostsState = [
         techStacks: ['Python', 'JavaScript', 'React'],
     },
     {
-        id: 9,
+        id: 8,
         imageUrl: 'https://w0.peakpx.com/wallpaper/659/699/HD-wallpaper-python-amoled-coding-coding-dark-dark-programming-python-sky-universe.jpg',
         title: 'How to Get the Current Time in Python',
         date: new Date('2023-09-23'),
@@ -90,6 +90,12 @@ const initialPostsState = [
 
 export default function Blog() {
     const [posts, setPosts] = useState(initialPostsState);
+    const [figureHeight, setFigureHeight] = useState(0);
+
+    useLayoutEffect(() => {
+        const sectionWidth = document.querySelector(`.${style.postContent}`).offsetWidth;
+        setFigureHeight(Math.round((9 / 16) * sectionWidth));
+    }, []);
 
     function getFontAwesomeStackIcon(stack) {
         if (stack === 'Python') return <FontAwesomeIcon icon={faPython}/>
@@ -116,7 +122,7 @@ export default function Blog() {
             <article className={style.postContainer}>
                 {posts.map(post => (
                     <section key={post.id} className={style.postContent}>
-                        <figure>
+                        <figure style={{height: figureHeight + 'px'}}>
                             <img src={post.imageUrl} alt="post-image"/>
                         </figure>
                         <div className={style.dateAndStacks}>
