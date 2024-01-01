@@ -79,3 +79,14 @@ class UserProfile(models.Model):
         null=False,
         blank=False,
     )
+
+    def __str__(self):
+        return self.get_full_name
+
+    @property
+    def get_full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    @property
+    def get_phone_number(self):
+        return self.phone_number
