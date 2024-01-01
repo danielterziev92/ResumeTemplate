@@ -20,6 +20,7 @@ DJANGO_APPS = (
 
 APPLICATION_APPS = (
     'ResumeTemplate.user_app.apps.UserAppConfig',
+    'ResumeTemplate.course.apps.CourseConfig',
 )
 
 THIRD_PARTY_APPS = ()
