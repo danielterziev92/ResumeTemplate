@@ -33,3 +33,18 @@ class Ability(models.Model):
         null=False,
         blank=False,
     )
+
+
+class SkillSection(models.Model):
+    SECTION_TITLE_MAX_LENGTH = 50
+
+    section_name = models.CharField(
+        max_length=SECTION_TITLE_MAX_LENGTH,
+        null=False,
+        blank=False,
+    )
+
+    ability = models.ManyToManyField(
+        Ability,
+        related_name='skill_section_abilities',
+    )
