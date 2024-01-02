@@ -7,6 +7,9 @@ class BannerText(models.Model):
         blank=False
     )
 
+    def __str__(self):
+        return self.text
+
 
 class Skill(models.Model):
     NAME_MAX_LENGTH = 50
@@ -17,14 +20,17 @@ class Skill(models.Model):
         blank=False,
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Ability(models.Model):
     NAME_MAX_LENGTH = 50
 
     name = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
     )
 
     skills = models.ManyToManyField(
@@ -33,6 +39,12 @@ class Ability(models.Model):
         null=False,
         blank=False,
     )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Abilities'
 
 
 class SkillSection(models.Model):
@@ -44,7 +56,10 @@ class SkillSection(models.Model):
         blank=False,
     )
 
-    ability = models.ManyToManyField(
+    abilities = models.ManyToManyField(
         Ability,
         related_name='skill_section_abilities',
     )
+
+    def __str__(self):
+        return self.section_name
