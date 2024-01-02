@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class BannerText(models.Model):
+    text = models.TextField(
+        null=False,
+        blank=False
+    )
